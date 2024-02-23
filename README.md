@@ -6,10 +6,10 @@ Practice Framework: `Flask`, `Jinja Template`
 ```sh
 cd Shopping-Cart
 python3 -m venv .venv
-. .venv/bin/activate
 ```
 
 ### Run App
 ```sh
+. .venv/bin/activate
 python app.py
 ```
