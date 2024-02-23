@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{session["user"]}}'s Shopping Cart</title>
+    </head>
+    <body>
+        <h1>Welcome! {{session["user"]}}</h1>
+        <h2>Your Shopping Cart</h2>
+
+        <form action="/shopping" method="POST">
+            <input type="text" name="new_item" placeholder="Enter here..." required/>
+            <button type="submit" name="add">Add Item</button>
+        </form>
+
+        {% for item in session["your_cart"] %}
+        <form action="/shopping" method="POST">
+            <label>{{item}}</label>
+            <input type="hidden" name="deleted_item" value="{{item}}" />
+            <button type="submit" name="delete">Delete Item</button>
+        </form>
+        {% else %}
+        <p style="color: red;">Your cart is currently empty.</p>
+        {% endfor %}
+    </body>
+</html>
